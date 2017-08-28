@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var count=[
+        {name:"男",value:"100"},
+        {name:"女",value:"20"},
+    ];
+
+    //新数组中的每一个元素由每一次执行map回调函数的返回值构成
+    var count2=count.map(function(v){
+        return v.name;
+    });
+
+    console.log(count2);//["男","女"]
+</script>
+</html>

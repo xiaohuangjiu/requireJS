@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.css">
+</head>
+<body>
+    <input type="text" id="datetimepicker">
+</body>
+<script src="../js/lib/jquery-2.1.4.js"></script>
+<script src="../assets/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>
+<script src="../assets/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script>
+    $('#datetimepicker').datetimepicker({
+        //参数/选项/配置
+        format: 'yyyy-mm-dd',
+        language:"zh-CN",
+        weekStart:"1",       //从周几开始
+        //startDate：可以选择的最早的时间
+        //endDate：可以选择的最晚的时间
+        daysOfWeekDisabled:[6,0],    //周几不能选中
+        autoclose:true,        //选定一个日期之后就自动隐藏日期控件
+        //startView:"year"      //打开日期控件立马就看到的视图，如果是月，看到月拥有多少天，如果是年，看到1年12月
+        minView:"month", //如果是月，最小能够精确到哪一天，如果是天，最小能够精确到哪一个小时
+        todayBtn:true,
+        todayHighlight:true
+    });
+</script>
+</html>

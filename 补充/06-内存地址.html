@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+//    //添加新的模态框之前删除旧的模态框？-->删除重复的内容
+//    -->$("#modalAddTeacher").remove();//只能删除模态框的内容这个容器
+//
+//    添加讲师完毕，把数据提交到服务器中，希望把模态框隐藏？
+//    -->$("#modalAddTeacher").hide();//只能隐藏内容区域，不能删除遮罩层
+//    -->$("#modalAddTeacher").modal("hide");//隐藏内容区域，同时删除遮罩层
+
+
+
+    //将document.body这个对象的内存地址给了body1
+    var body1=document.body;
+    //将document.body这个对象的内存地址给了body2
+    var body2=document.body;
+    //推论：body1和body2指向相同的内存地址
+    console.log(body1==body2);//true
+    console.log(body1===body2);//true
+
+
+    var o1={a:100,b:200};
+    //将o1的内存地址赋值给了o2.o10属性-->o2.o10属性保存了o1的内存地址(的引用)
+    var o2={o10:o1};
+    //推论：
+    console.log(o2.o10==o1);//true
+    //推算出：
+    o1.a=200;
+    console.log(o2.o10.a)//200
+
+
+
+    //$("body")
+//    var $={};
+//    var body=document.querySelector("body");
+//    $[0]=body;
+
+//    //$(document.body)
+//    var $={};
+//    $[0]=document.body;
+
+
+    //$("<input/>")
+    //var $={};
+    //首先将字符串转换为一个dom元素：input
+    //然后将该dom元素保存在jquery对象中
+    //      $[0]=input;
+
+</script>
+</html>

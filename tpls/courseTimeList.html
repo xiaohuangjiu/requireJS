@@ -1,0 +1,61 @@
+<div>
+    <ol class="breadcrumb">
+        <li><a href="#">课时管理</a></li>
+        <li class="active">课时列表</li>
+    </ol>
+    <div class="row">
+        <div class="col-md-1 col-md-offset-10" cs_id="{{result.cs_id}}">
+            <button class="btn btn-success btn-add">添加课时</button>
+        </div>
+    </div>
+    <br/>
+    <div class="panel panel-default">
+        <div class="panel-heading">课程基本信息</div>
+        <div class="panel-body">
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        {{if(result.cs_cover=='')}}
+                        <img class="media-object" src="imgs/course.png" width="240" height="120" alt="">
+                        {{else}}
+                        <img class="media-object" src="{{result.cs_cover}}" width="240" height="120" alt="">
+                        {{/if}}
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        课程名称：{{result.cs_name}}
+                    </h4>
+                    <h4>讲师名称：{{result.tc_name}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">课时信息</div>
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>时长</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{each result.lessons}}
+                <tr>
+                    <td>{{$value.ct_id}}</td>
+                    <td>{{$value.ct_name}}</td>
+                    <td>{{$value.ct_video_duration}}</td>
+                    <td ct_id="{{$value.ct_id}}">
+                        <button class="btn btn-primary btn-edit">编辑</button>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="assets/uploadify/uploadify.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<!--1、页面左侧-->
+<div class="left">
+    <!--1.1、个人简介-->
+    <div class="profile">
+        <div class="img-container">
+            <img src="imgs/pic.jpg" alt="" width="80" height="80" class="img-circle">
+        </div>
+        <h4 class="text-center">前端学院</h4>
+    </div>
+    <!--1.2、菜单栏-->
+    <div class="list-group">
+        <a href="#" class="list-group-item active teacher-manager">讲师管理</a>
+        <a href="#" class="list-group-item course-manager">课程管理</a>
+        <a href="#" class="list-group-item add-course">&gt;&gt;&gt;添加课程</a>
+        <a href="#" class="list-group-item course-category">课程分类</a>
+        <a href="#" class="list-group-item chart">图表统计</a>
+    </div>
+</div>
+<!--2、页面右侧-->
+<div class="right">
+    <!--2.1、右上方-->
+    <div class="panel panel-default panel-top">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-1">
+                    <button class="btn btn-success" onclick="location.reload()">
+                        <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="col-md-1 col-md-offset-8">
+                    <a href="javascript:void(0)" id="linkPersonalCenter">个人中心</a>
+                </div>
+                <div class="col-md-1">
+                    <a href="javascript:void(0)">退出</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--2.2、右下方：存放内容的容器-->
+    <div class="panel panel-default panel-content">
+        <div class="panel-body">
+
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/lib/require.js" data-main="main"></script>
+</html>

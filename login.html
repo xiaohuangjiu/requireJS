@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h3 class="text-center">博学谷管理系统</h3>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">用户名</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="tc_name" value="前端学院">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">密码</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" name="tc_pass" value="123456">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success btn-block">登录</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+<script src="js/lib/jquery-2.1.4.js"></script>
+<script src="js/lib/jquery.cookie.js"></script>
+<script>
+    $("form").on("submit",function(){
+        //将表单数据进行序列化
+        var formData=$(this).serialize();//要想获取序列化的数据，该表单数据一定要有name属性
+        //alert(formData);
+
+        $.ajax({
+            url:"/api/login",//-->http://api.botue.com/login
+            type:"post",
+            data:formData,
+            success:function(res){
+                console.log("成功");
+                console.log(res);
+
+                if(res.code==200){
+
+                    //给index.html传入一些数据-->跨页面数据传递
+                    //-->h5：localStorage/sessionStorage：数据缓存时间不同
+
+                    var userInfoStr=JSON.stringify(res.result);//将一个对象序列化为JSON字符串格式
+
+                    $.cookie("userInfo",userInfoStr);
+
+                    //sessionStorage.setItem("userInfo",userInfoStr);
+
+
+                    //跳转到index.html
+                    location.href="index.html";
+                    //location.href="/index.html"
+                    //location.href="/";
+                }
+            },
+            error:function(res){
+                console.log("失败");
+                console.log(res);
+            }
+        })
+
+
+        return false;//阻止页面跳转，就是阻止submit事件的默认行为
+
+    })
+</script>
+</html>

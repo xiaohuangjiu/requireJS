@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="../js/lib/jquery-2.1.4.js"></script>
+<script src="../js/lib/jquery.cookie.js"></script>
+<script>
+    //$.cookie中expires可以是Date类型的数据，也可以是数字类型的数据，如果是数字类型表示"多少天"后过期
+
+//    //1、设置值
+//    $.cookie("age", 18);
+//    $.cookie("gender", "女", {expires: 1});//cookie值将会在一天后过期
+//    $.cookie("length", 160, {expires: 0.5});//cookie值将会在半天后过期
+//
+//    //2、获取值
+//    alert($.cookie("age"));
+//    alert($.cookie("gender"));
+//    alert($.cookie("length"));
+
+//    //3、移除指定的cookie值
+    $.removeCookie("length");
+</script>
+</html>

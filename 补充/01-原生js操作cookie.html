@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="02.html">02.html</a>
+</body>
+<script>
+    //-->会话cookie：当一个会话结束时，这样的cookie就没了
+//    //存储一个键值：
+//    document.cookie="id=666";
+//    //获取键值：
+//    console.log(document.cookie);//打印出当前域名下面的所有的cookie值
+
+    //-->持久cookie：这样的cookie能够持续一段时间
+    document.cookie="name=ccc;expires="+new Date("2017-08-20 08:00:00");
+
+    console.log(document.cookie);
+</script>
+</html>

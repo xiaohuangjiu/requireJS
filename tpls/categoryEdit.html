@@ -1,0 +1,71 @@
+<div class="modal fade" id="modalEditCategory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" >编辑分类</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">分类名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="cg_name" value="{{obj.cg_name}}">
+                            <input type="hidden" name="cg_id" value="{{obj.cg_id}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">是否显示</label>
+                        <div class="col-sm-10">
+                            {{if(obj.cg_is_hide==0)}}
+                                <label class="radio-inline">
+                                    <input type="radio" name="cg_is_hide" value="0" checked="checked"> 是
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="cg_is_hide" value="1"> 否
+                                </label>
+                            {{else}}
+                                <label class="radio-inline">
+                                    <input type="radio" name="cg_is_hide" value="0" > 是
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="cg_is_hide" value="1" checked="checked"> 否
+                                </label>
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">排序</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="cg_order" value="{{obj.cg_order}}" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">上级分类</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="cg_pid">
+                                <!--a、以当前分类是前端开发为例，前端开发有一个cg_pid属性标记了它的上级分类-->
+                                <!--b、接下来我们需要通过这个cg_pid属性来找到对应的上级分类-->
+                                <!--c、所有的上级分类都存在于result数组中，所以就需要拿cg_pid和数组中每一个元素的cg_id进行匹配，如果匹配成功就是对应的上级分类，否则就不是-->
+
+                                {{each result v}}
+                                    {{if(obj.cg_pid==v.cg_id)}}
+                                <option selected="selected" value="{{v.cg_id}}">{{v.cg_name}}</option>
+                                    {{else}}
+                                <option value="{{v.cg_id}}">{{v.cg_name}}</option>
+                                    {{/if}}
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-5">
+                            <button type="submit" class="btn btn-success">提交</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div>
+    <ol class="breadcrumb">
+        <li><a href="#">分类管理</a></li>
+        <li class="active">分类列表</li>
+    </ol>
+    <div class="row">
+        <div class="col-md-1 col-md-offset-10">
+            <button class="btn btn-success btn-add">添加分类</button>
+        </div>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>分类名称</th>
+            <th>课程数量</th>
+            <th>是否显示	</th>
+            <th>排序</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+            {{each result v i}}
+                <tr class="{{v.cg_pid==0?'info':''}}">
+                    <td>{{v.cg_pid==0?'':'|---'}}{{v.cg_name}}</td>
+                    <td>{{v.total}}</td>
+                    <td>{{v.cg_is_hide==0?"显示":"隐藏"}}</td>
+                    <td>{{v.cg_order}}</td>
+                    <td cg_id="{{v.cg_id}}">
+                        <button class="btn btn-primary btn-edit">编辑</button>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

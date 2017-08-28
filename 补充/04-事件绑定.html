@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="../js/lib/jquery-2.1.4.js"></script>
+<script>
+    var $1=$("body");
+    var $2=$("body");
+    console.log($1==$2);//false
+    console.log($1[0]==$2[0]);//true
+
+//    var input="<input type='button' value='按钮'/>";
+//
+//    //a、$(input)这一段话中把input这个字符串转换为DOM元素了，然后把该DOM元素放到该jquery对象中，后续的事件绑定是绑定给了这个DOM元素
+//    $(input).on("click",function(){
+//        alert("事件绑定");
+//    });
+//
+//    $("body").append(input);//b、append(input)这一段话中append方法内部会自动的把input字符串转换为DOM元素
+//
+//    //a、b这2次转换结果并不是同一个DOM元素，
+//    //a元素有事件绑定
+//    //b元素没有事件绑定，b元素出现在了页面中
+
+
+//    //解决方案1：
+//    var input="<input type='button' value='按钮'/>";
+//
+//    var $input=$(input).on("click",function(){
+//        alert("事件绑定");
+//    });
+//
+//    $("body").append($input);
+
+
+
+//    //解决方案2：
+//    var input="<input type='button' value='按钮'/>";
+//
+//    var $input=$(input);
+//
+//    $input.on("click",function(){
+//        alert("事件绑定");
+//    });
+//
+//    $("body").append($input);
+</script>
+</html>

@@ -1,0 +1,57 @@
+<div class="modal fade" id="modalAddCategory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" >添加分类</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">分类名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="cg_name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">是否显示</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input type="radio" name="cg_is_hide" value="0" checked="checked"> 是
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="cg_is_hide" value="1"> 否
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">排序</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="cg_order" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">上级分类</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="cg_pid">
+                                <!--<option value="0">顶级分类</option>-->
+                                <!--option有文本，文本是给用户看的-->
+                                <!--option有value，value是用来提交表单的-->
+
+                                {{each result v}}
+                                    <option value="{{v.cg_id}}">{{v.cg_name}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-5">
+                            <button type="submit" class="btn btn-success">提交</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

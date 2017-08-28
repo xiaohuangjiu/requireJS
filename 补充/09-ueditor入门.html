@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="button" value="获取内容" id="btn">
+<input type="button" value="获取纯文本" id="btnTxt">
+
+<!-- 加载编辑器的容器 -->
+<script id="container" name="content" type="text/plain"></script>
+
+<script src="../assets/ueditor/ueditor.config.js"></script>
+<script src="../assets/ueditor/ueditor.all.js"></script>
+<script>
+    //UE
+    var ue = UE.getEditor('container'); //"container"也就对应了id为"container"的script标签
+
+    ue.ready(function(){
+        //设置编辑器内容
+        ue.setContent("hello JS");
+
+
+        var btn=document.getElementById("btn");
+        btn.onclick=function(){
+            //获取html内容
+            alert(ue.getContent());
+        }
+
+        var btnTxt=document.getElementById("btnTxt");
+        btnTxt.onclick=function(){
+            //获取纯文本
+            alert(ue.getContentTxt());
+        }
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/uploadify/uploadify.css">
+</head>
+<body>
+
+<input type="file" id="file_upload_1">
+
+</body>
+<script src="../js/lib/jquery-2.1.4.js"></script>
+<script src="../assets/uploadify/jquery.uploadify.js"></script>
+<script>
+    $("#file_upload_1").uploadify({
+
+        auto:true,//选择文件之后是否自动上传        true自动上传
+
+//        buttonImage:"../imgs/pic.jpg",
+
+//        checkExisting:true,//选择一个文件的时候，检测上传队列中是否有相同的文件,如果相同会有提示
+
+        fileObjName:"tc_avatar", //：等同于file标签的name值
+
+        fileTypeExts:"*.jpg; *.png; *.gif",
+
+        formData:{},       //用于表单提交的额外数据
+
+        itemTemplate:"<span></span>",     //上传模板
+
+//        height        : 198,
+        swf           : '../assets/uploadify/uploadify.swf',//swf文件的地址
+        uploader      : '/api/uploader/avatar',//服务器中处理上传请求的地址
+//        width         : 195,
+
+        onUploadSuccess:function(){
+
+            //修改首页中的用户头像
+        }
+
+    });
+</script>
+</html>
